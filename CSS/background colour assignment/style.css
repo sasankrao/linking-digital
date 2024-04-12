@@ -1,5 +1,5 @@
 .color-div {
-    width: 250px;
+    width: 200px;
     height: 200px;
     margin: 20px;
     display: inline-block;
@@ -9,13 +9,13 @@
 }
 
 #div1 {
-    background-color: #29d207; 
+    background-color: #ff6666; 
 }
 
 #div2 {
-    background-color: #fc6b4e; 
+    background-color: #66ccff; 
 }
 
 #div3 {
-    background-color: #05f4f4; 
+    background-color: #99ff99; 
 }
