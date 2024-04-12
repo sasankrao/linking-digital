@@ -1,0 +1,21 @@
+.color-div {
+    width: 250px;
+    height: 200px;
+    margin: 20px;
+    display: inline-block;
+    text-align: center;
+    line-height: 200px;
+    font-size: 24px;
+}
+
+#div1 {
+    background-color: #29d207; 
+}
+
+#div2 {
+    background-color: #fc6b4e; 
+}
+
+#div3 {
+    background-color: #05f4f4; 
+}
