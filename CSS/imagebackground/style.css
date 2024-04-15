@@ -1,0 +1,23 @@
+.color-div {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    display: inline-block;
+    text-align: center;
+    line-height: 200px;
+    font-size: 24px;
+    
+}
+
+#div1 {
+    background-image: url('./csk.png');
+
+}
+
+#div2 {
+    background-image: url('./mi.png');
+}
+
+#div3 {
+    background-image: url('./rcb.jpg');
+}
