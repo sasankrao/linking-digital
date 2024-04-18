@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>z index assignent</title>
+    <style>
+        body
+        {
+            height: 2000px;
+        }
+        div
+        {
+
+       
+            width: 100px;
+            height: 100px;
+            padding: 50px;
+            border: solid 3px black;
+            position: absolute;
+            color: white;
+            font-size:22px;
+            font-weight: bold;
+            text-align: right;
+            top: 150px;
+            left: 150px;
+            right: 700px;
+        }
+        div:nth-child(1)
+        {
+            background-color: blueviolet;
+            z-index: 1;
+            width: 190%;
+            height: 20px;
+            z-index:999;
+            left: 150px;
+            top: 150px;
+            
+        }
+        a
+        {
+            padding-left: 20px ;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div> 
+        <center>
+       <a href="">home</a>
+       <a href="">profile</a>
+       <a href="">logout</a>
+    </center>
+       
+    </div>
+</body>
+</html>

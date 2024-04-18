@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex property</title>
+    <style>
+        .root
+        {
+            --dark-clr:black;
+            --light-clr:white;
+            --main-clr: red;
+            --second-clr: green;
+
+        }
+        .flex-container
+        {
+            width: 150px;
+            height: 160px;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content:center; width: 100%;
+            
+           
+       
+
+        }
+        div
+        {
+          width: 50px;
+          height: 60px;
+           background-color: blue;
+           border: solid black;
+           border-spacing: 5px;
+         
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+       <div>div 1</div>
+       <div> div 2</div>
+       <div> div 3</div>
+        
+    </div>
+</body>
+</html>

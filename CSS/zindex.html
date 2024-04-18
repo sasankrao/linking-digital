@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> z index</title>
+    <style>
+        div
+        {
+            width: 200px;
+            height: 200px;
+            padding: 50px;
+            border: solid black;
+            position: absolute;
+            z-index: 3;
+        }
+        div:nth-child(1)
+        {
+            background-color: blue;
+            top:205px;
+            left: 150px;
+
+        }
+        div:nth-child(2)
+        {
+        background-color: blueviolet;
+        top: 367px;
+        left: 123px;
+        }
+        div:nth-child(3)
+        {
+           background-color: green ;
+           
+        }
+    </style>
+</head>
+<body>
+    <div> 
+        this is div 1
+    </div>
+    <div>
+        this is div 2
+    </div>
+    <div>
+        this is div 3
+    </div>
+</body>
+</html>
