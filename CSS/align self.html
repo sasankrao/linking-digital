@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <title>Flex basic</title>
+        <style>
+            :root
+            {
+                --dark-clr:#0e283b;
+                --light-clr:#f1f4f7;
+                --main-clr:#37ea1b;
+                --secondary-clr: #d616f4;
+            }
+            body
+            {
+                margin:0px;
+                padding: 0px;
+                color:var(--dark-clr);
+                background-color: var(--light-clr);
+                height: 100vh;
+            }
+            .container
+            {
+                width: 80%;
+                height: 700px;
+                margin: 0 auto;
+                border: 10px solid var(--dark-clr);
+            }
+
+            .item
+            {
+                width: 150px;
+                height: 150px;
+                background-color: var(--secondary-clr);
+                border-radius: 10px;
+                color: var(--light-clr);
+                border: solid 10px var(--main-clr);
+            }
+
+            /************** Starting flex styles ************/
+            /*
+                Instead of using all the properties we can directly use flex.             
+                
+                align-self - used to make independent items to align along main axis.  
+                ~~~~~~~~~~
+                align-self: center | flex-start | flex-end | baseline              
+            */
+            .container
+            {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .item-1
+            {
+                flex-basis: 300px;
+                align-self: flex-end;
+            }
+            .item-2
+            {
+                flex-shrink: 0;
+                align-self: center;
+            }
+            .item-3
+            {
+                flex-grow: 1;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+
+            <div class="item item-1">
+                div1
+            </div>
+
+            <div class="item item-2">
+                div2
+            </div>
+
+            <div class="item item-3">
+                div3
+            </div>
+
+        </div>
+    </body>
+</html>
