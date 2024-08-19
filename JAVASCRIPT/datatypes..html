@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript</h2>
+
+<p>When adding a number and a string, JavaScript will treat the number as a string.</p>
+
+<p id="demo"></p>
+
+<script>
+let x = 16 + "Volvo";
+document.getElementById("demo").innerHTML = x;
+</script>
+<script>
+console.log(typeof 'hello'); // "number"
+console.log(typeof 34); // "string"
+console.log(typeof true); // "boolean"
+console.log(typeof undefined); // "undefined"
+console.log(typeof null); // "object" (this is a historical bug in JavaScript)
+console.log(typeof {}); // "object"
+console.log(typeof []); // "object"
+console.log(typeof function(){}); // "function"
+console.log(typeof Symbol()); // "symbol"
+console.log(typeof 123n); // "bigint"
+</script>
+
+</body>
+</html>

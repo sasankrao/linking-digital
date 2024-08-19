@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete Product</title>
+  </head>
+  <body>
+    <button onclick="deleteProduct('102')">Delete Product ID 100</button>
+    <button onclick="deleteProduct(102)">Delete Product ID 100 (Number)</button>
+    <script>
+      function deleteProduct(productId) {
+        try {
+          var http = new XMLHttpRequest();
+
+          http.onreadystatechange = function () {
+            if (http.readyState === 4) {
+              if (http.status === 200) {
+                var response = JSON.parse(http.responseText);
+                window.alert("Product deleted successfully");
+              } else if (http.status === 404) {
+                window.alert("Error: Product not found");
+              } else {
+                window.alert("Error: " + http.status + " - " + http.statusText);
+              }
+            }
+          };
+
+          http.open("DELETE", "http://localhost:3000/test/" + productId);
+          http.send();
+        } catch (error) {
+          window.alert("An error occurred: " + error.message);
+        }
+      }
+    </script>
+  </body>
+</html>

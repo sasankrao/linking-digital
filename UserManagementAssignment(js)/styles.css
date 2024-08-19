@@ -1,0 +1,145 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container1 {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  width: 300px;
+  flex-direction: column;
+
+  max-width: 900px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+label {
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+input {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #5cb85c;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #4cae4c;
+}
+/* css for login page */
+
+/* css for Profile dashboard */
+
+.container2 {
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100%;
+  flex-wrap: wrap;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.profile {
+  display: flex;
+  flex-basis: calc(20.33% - 20px);
+  justify-content: center;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  padding: 20px;
+  width: 100px;
+  text-align: center;
+}
+.passwordreset {
+  padding: 10px;
+  border: none;
+  font-size: 16px;
+  margin-top: 10px;
+  color: rgba(0, 0, 255, 0.742);
+}
+#registeruser {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #895cb8;
+  color: white;
+  font-size: 14px;
+  margin-top: 10px;
+  cursor: pointer;
+  width: 50%;
+  text-align: center;
+  margin-left: 24%;
+}
+
+hr.styled {
+  border: none;
+  height: 2px; /* Height of the line */
+  background: linear-gradient(to right, #f00, #00f); /* Gradient color */
+  margin: 15px 0; /* Margin around the line */
+}
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  text-align: left;
+}
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+span {
+  color: red;
+}
+.errorMsg {
+  color: red;
+  margin: 0px;
+}
+#nameErrorMsg,
+#emailErrorMsg,
+#passwordErrorMsg,
+#confirmPasswordErrorMsg,
+#roleErrorMsg,
+#statusErrorMsg {
+  display: none;
+}

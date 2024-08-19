@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
+    <link rel="stylesheet" href="AllUser.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>User Profile</h2>
+      <table id="userTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="userTableBody">
+          <!-- User rows will be dynamically added here -->
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      const user1 = JSON.parse(sessionStorage.getItem("userDetail"));
+      var userTableBody = document.getElementById("userTableBody");
+      userTableBody.innerHTML = "";
+      if (user1) {
+        var newRow = document.createElement("tr");
+        var newName = document.createElement("td");
+        newName.innerHTML = user1.uName;
+        newRow.appendChild(newName);
+        var newEmail = document.createElement("td");
+        newEmail.innerHTML = user1.uEmail;
+        newRow.appendChild(newEmail);
+        var newRole = document.createElement("td");
+        newRole.innerHTML = user1.uRole;
+        newRow.appendChild(newRole);
+        var newStatus = document.createElement("td");
+        newStatus.innerHTML = user1.uStatus;
+        newRow.appendChild(newStatus);
+
+        userTableBody.appendChild(newRow);
+      } else {
+        document.getElementById("container").innerHTML =
+          "<p>No user information found.</p>";
+      }
+    </script>
+  </body>
+</html>

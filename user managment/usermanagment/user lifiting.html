@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Listing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            
+            background: linear-gradient(to right, rgb(242, 112, 156), rgb(255, 148, 114));
+          
+        
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .search-container, .filter-container, .pagination-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .search-container input, .filter-container select {
+            padding: 10px;
+            width: 100%;
+            max-width: 200px;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .search-container button {
+            padding: 10px 20px;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .table-container {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table th, table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        table th {
+            background-color: #f8f8f8;
+        }
+        table td .actions {
+            display: flex;
+            gap: 10px;
+        }
+        table td .actions button {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .edit-btn {
+            background-color: #ffc107;
+            color: white;
+            }
+        .delete-btn {
+            background-color: #dc3545;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>User Listing</h1>
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Search...">
+        <button onclick="searchUsers()">Search</button>
+    </div>
+    <div class="filter-container">
+        <select id="role-filter" onchange="filterUsers()">
+            <option value="all">All Roles</option>
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+        </select>
+        <select id="status-filter" onchange="filterUsers()">
+            <option value="all">All Status</option>
+            <option value="active">Active</option>
+            <option value="inactive">Inactive</option>
+        </select>
+    </div>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="user-table">
+                <tr>
+                    <td>John D.</td>
+                    <td>john@mail.com</td>
+                    <td>Admin</td>
+                    <td>Active</td>
+                    <td class="actions">
+                        <button class="edit-btn" onclick="editUser(this)">Edit</button>
+                        <button class="delete-btn" onclick="deleteUser(this)">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Jane S.</td>
+                    <td>jane@mail.com</td>
+                    <td>User</td>
+                    <td>Inactive</td>
+                    <td class="actions">
+                        <button class="edit-btn" onclick="editUser(this)">Edit</button>
+                        <button class="delete-btn" onclick="deleteUser(this)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+</div>
+
+<script>
+    const users = [
+        { name: 'charan.', email: 'charan@mail.com', role: 'Admin', status: 'Active' },
+        { name: 'kiran.', email: 'kiran@mail.com', role: 'User', status: 'Inactive' },
+        { name: 'deepak.', email: 'deepak@mail.com', role: 'Admin', status: 'Active' },
+        { name: 'meghana.', email: 'meghana@mail.com', role: 'User', status: 'Inactive' },
+        { name: 'divya.', email: 'divya@mail.com', role: 'Admin', status: 'Active' },
+        { name: 'anjali.', email: 'anjali@mail.com', role: 'User', status: 'Inactive' },
+      
+    ];
+
+    function renderUsers(filteredUsers) {
+        const userTable = document.getElementById('user-table');
+        userTable.innerHTML = '';
+        filteredUsers.forEach(user => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${user.name}</td>
+                <td>${user.email}</td>
+                <td>${user.role}</td>
+                <td>${user.status}</td>
+                <td class="actions">
+                    <button class="edit-btn" onclick="editUser(this)">Edit</button>
+                    <button class="delete-btn" onclick="deleteUser(this)">Delete</button>
+                </td>
+            `;
+            userTable.appendChild(row);
+        });
+    }
+
+    function searchUsers() {
+        const searchTerm = document.getElementById('search').value.toLowerCase();
+        const filteredUsers = users.filter(user => {
+            return user.name.toLowerCase().includes(searchTerm) || 
+                   user.email.toLowerCase().includes(searchTerm);
+        });
+        renderUsers(filteredUsers);
+    }
+
+    function filterUsers() {
+        const roleFilter = document.getElementById('role-filter').value;
+        const statusFilter = document.getElementById('status-filter').value;
+        const filteredUsers = users.filter(user => {
+            const roleMatch = roleFilter === 'all' || user.role.toLowerCase() === roleFilter;
+            const statusMatch = statusFilter === 'all' || user.status.toLowerCase() === statusFilter;
+            return roleMatch && statusMatch;
+        });
+        renderUsers(filteredUsers);
+    }
+
+    function editUser(button) {
+        const row = button.parentElement.parentElement;
+        const name = row.cells[0].textContent;
+        alert(`Edit user: ${name}`);
+    }
+
+    function deleteUser(button) {
+        const row = button.parentElement.parentElement;
+        const name = row.cells[0].textContent;
+        if (confirm(`Are you sure you want to delete user: ${name}?`)) 
+            row.remove();
+        }
+
+  
+    renderUsers(users);
+</script>
+
+</body>
+</html>

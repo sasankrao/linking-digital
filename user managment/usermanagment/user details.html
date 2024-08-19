@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            background: linear-gradient(to right, rgb(242, 112, 156), rgb(255, 148, 114));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .user-details {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
+        }
+
+        .user-details h2 {
+            background-color: #007bff;
+            color: #fff;
+            margin: 0;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .user-details ul {
+            list-style: none;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .user-details ul li {
+            border-bottom: 1px solid #eee;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .user-details ul li:last-child {
+            border-bottom: none;
+        }
+
+        .user-details ul li span {
+            font-weight: bold;
+        }
+
+        .user-details .actions {
+            background-color: #f9f9f9;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        .user-details .actions button {
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            margin: 0 5px;
+            padding: 10px 15px;
+        }
+
+        .user-details .actions button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="user-details">
+        <h2>User Details</h2>
+        <ul>
+            <li><span>Name:</span> sai</li>
+            <li><span>Email:</span> sai@mail.com</li>
+            <li><span>Role:</span> Admin</li>
+            <li><span>Status:</span> Active</li>
+            <li><span>Phone Number:</span>7901005698</li>
+            <li><span>Address:</span> rajahmundry</li>
+            <li><span>Date Registered:</span> 01/01/2021</li>
+            <li><span>Last Login:</span> 01/15/2022</li>
+        </ul>
+        <div class="actions">
+            <button onclick="editUser()">Edit</button>
+            <button onclick="deleteUser()">Delete</button>
+        </div>
+    </div>
+
+    <script>
+        function editUser() {
+            alert('Edit button clicked');
+            // Add your edit functionality here
+        }
+
+        function deleteUser() {
+            if (confirm('Are you sure you want to delete this user?')) {
+                alert('User deleted');
+                // Add your delete functionality here
+            }
+        }
+    </script>
+</body>
+</html>

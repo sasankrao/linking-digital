@@ -1,0 +1,127 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>instasnap</title>
+    <style>
+        body{
+          
+            background: linear-gradient(to right, rgb(242, 112, 156), rgb(255, 148, 114));
+        }
+        
+        img{         
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 350px;
+  height: 350px;
+ border-radius: 10px;
+ border-style: dashed;
+ box-shadow: black;
+}
+        h1{
+content: center;
+  align-items: center;
+  font-style: italic;
+ height: 180px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  }
+ h3{
+ content: center;
+  align-items: center;
+  font-style: italic;
+  font-weight: 1000;
+ height: 100px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+ }
+    .btn-group {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+button {
+    position: absolute;
+    width: 170px;
+    height: inherit;
+    font-size: 1.2em;
+    background-color: rgb(20, 20, 20);
+    font-weight: 600;
+    border-radius: 30px;
+    outline: none;
+    cursor: pointer;
+ 
+}
+button:nth-child(1) {
+    margin-left: -200px;
+    background-color: crimson;
+  
+}
+button:nth-child(2) {
+    margin-right: -200px;
+    color: rgb(13, 13, 13);
+    background-color: yellow;
+    
+    
+}
+        .emoji2 {
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: bounce 2s infinite;
+}
+
+.emoji2::before {
+    content: '😍';
+    animation: heartBeat 1s infinite alternate;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes heartBeat {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}
+    </style>
+</head>
+<body>
+    <img src="./886d6e0260af9c330011e81b29349780.jpg" alt="">
+<h1>Thank you so so much much <div class="emoji2"> </div> Anjali</h1>
+<h3> kinda na profiles vunayi chusi kochem accept chey Ammu </h3>
+<div>
+ <div class="btn-group">
+    <button id="openPageButton"> <i class="fa fa-instagram" style="font-size:24px"></i> instagram</button> 
+    <button id="openPageButton2"><i class="fa fa-snapchat" style="font-size:24px"></i>  snapchat</button> 
+    
+</div>
+<script>
+    document.getElementById('openPageButton').addEventListener('click', function() {
+        window.open('https://www.instagram.com/saisasank.__?igsh=Z215eXZ2eHJobTI2&utm_source=qr', '_blank'); 
+    });
+    document.getElementById('openPageButton2').addEventListener('click', function() {
+        window.open('https://snapchat.com/t/B8uNHZ36', '_blank'); 
+    });
+</script>
+</body>
+</html>

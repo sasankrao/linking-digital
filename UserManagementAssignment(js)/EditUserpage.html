@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container1" id="editUser">
+      <h2>Edit User Page</h2>
+
+      <label for="email"><span>*</span>Email:</label>
+      <input type="email" id="email" name="email" />
+      <p class="errorMsg" id="emailErrorMsg"></p>
+      <div class="form-group">
+        <label for="role"><span>*</span>Role:</label>
+        <select id="role" name="role">
+          <option value="0">select..</option>
+          <option value="admin">Admin</option>
+          <option value="user">User</option>
+        </select>
+        <p class="errorMsg" id="roleErrorMsg"></p>
+      </div>
+      <div class="form-group">
+        <label for="status"><span>*</span>Staus:</label>
+        <select id="status" name="status">
+          <option value="0">select..</option>
+          <option value="active">Active</option>
+          <option value="Inactive">Inactive</option>
+        </select>
+        <p class="errorMsg" id="statusErrorMsg"></p>
+      </div>
+      <button type="button" id="submitButton" onclick="saveUser()">
+        Save Change
+      </button>
+    </div>
+
+    <script>
+      const user1 = JSON.parse(sessionStorage.getItem("user"));
+      console.log(user1.uEmail);
+
+      if (user1) {
+        document.getElementById("email").value = user1.uEmail;
+        document.getElementById("role").value = user1.uRole;
+        document.getElementById("status").value = user1.uStatus;
+      } else {
+        document.getElementById("editUser").innerHTML =
+          "<p>No user information found.</p>";
+      }
+      function saveUser() {
+        userID = user1.id;
+        var upadatedEmail = document.getElementById("email").value;
+        var updatedRole = document.getElementById("role").value;
+        var updatedSatus = document.getElementById("status").value;
+        const newObj = {
+          uEmail: upadatedEmail,
+          role: updatedRole,
+          uStatus: updatedSatus,
+        };
+        var http = new XMLHttpRequest();
+        http.open("PUT", "http://localhost:3000/user/" + userID);
+        http.setRequestHeader("Content-Type", "application/json");
+        http.onreadystatechange = function () {
+          if (http.readyState === 4) {
+            if (http.status === 200) {
+              alert("Product updated successfully");
+            } else {
+              window.alert("Error: " + http.status + " - " + http.statusText);
+            }
+          }
+        };
+        http.send(JSON.stringify(newObj));
+      }
+    </script>
+  </body>
+</html>

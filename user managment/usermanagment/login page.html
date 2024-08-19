@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f9fc;
+            background: linear-gradient(to right, rgb(242, 112, 156), rgb(255, 148, 114));
+            background-image: url(./login\ bi.jpg);
+            background-position: center;
+           
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h2 {
+            margin: 0;
+            font-size: 24px;
+            color: #0b0b0b;
+            
+        }
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #070707;
+            box-shadow: 0 0 5px rgba(10, 9, 10, 0.5);
+            outline: none;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .form-group input:focus {
+            border-color: #060606;
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #12b300;
+        }
+        .toggle-section {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .toggle-section button {
+            background: none;
+            border: none;
+            color: #007bff;
+            cursor: pointer;
+        }
+        .toggle-section button:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Admin Login</h2>
+        </div>
+        <form id="admin-form" class="login-form">
+            <div class="form-group">
+                <label for="admin-email">Email</label>
+                <input type="email" id="admin-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="admin-password">Password</label>
+                <input type="password" id="admin-password" name="password" required>
+            </div>
+            <button type="submit" class="btn">Login</button>
+        </form>
+
+        <div class="header" style="display: none;">
+            <h2>User Login</h2>
+        </div>
+        <form id="user-form" class="login-form" style="display: none;">
+            <div class="form-group">
+                <label for="user-email">Email</label>
+                <input type="email" id="user-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="user-password">Password</label>
+                <input type="password" id="user-password" name="password" required>
+            </div>
+            <button type="submit" class="btn">Login</button>
+        </form>
+
+        <div class="toggle-section">
+            <button id="toggle-btn">Switch to User Login</button>
+        </div>
+    </div>
+
+    <script>
+        const toggleBtn = document.getElementById('toggle-btn');
+        const adminForm = document.getElementById('admin-form');
+        const userForm = document.getElementById('user-form');
+        const headers = document.querySelectorAll('.header');
+
+        toggleBtn.addEventListener('click', () => {
+            if (adminForm.style.display === 'none') {
+                adminForm.style.display = 'block';
+                userForm.style.display = 'none';
+                headers[0].style.display = 'block';
+                headers[1].style.display = 'none';
+                toggleBtn.textContent = 'Switch to User Login';
+            } else {
+                adminForm.style.display = 'none';
+                userForm.style.display = 'block';
+                headers[0].style.display = 'none';
+                headers[1].style.display = 'block';
+                toggleBtn.textContent = 'Switch to Admin Login';
+            }
+        });
+    </script>
+</body>
+</html>

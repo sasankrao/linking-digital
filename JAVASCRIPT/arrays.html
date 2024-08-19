@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <label>Email/Mobile</label>
+        <input type="text" placeholder="Enter Email/Mobile" id="emailOrMobile"/>
+    </div>
+    <div>
+        <label>Password</label>
+        <input type="password" placeholder="Enter password" id="password"/>
+    </div>
+    <button onclick="validateCredentials()">Continue</button>
+    <p id="message"></p>
+    <script>
+
+        var products = [
+            {
+                name: 'Voltas Beko, A Tata Product 6 Kg 5 Star Fully Automatic Front Loading Washing Machine (2023 Model, WFL6012B7CUSKA/WXV, White, In-Built Heater)',
+                price: 36990,
+                imgSrc: 'https://m.media-amazon.com/images/I/71tXNy7SVZL._AC_UY218_.jpg',
+                ratingCount: 110,
+                averageRating: 3.8,
+                discount: 43
+            },
+            {
+                name: 'IFB 6 Kg 5 Star AI Powered Fully Automatic Front Load Washing Machine 2X Power Steam (DIVA AQUA GBS 6010, 2023 Model, Grey, In-built Heater, 4 years Comprehensive Warranty)',
+                price: 36990,
+                imgSrc: 'https://m.media-amazon.com/images/I/71tXNy7SVZL._AC_UY218_.jpg',
+                ratingCount: 110,
+                averageRating: 3.8,
+                discount: 43
+            },
+            {
+                name: 'Samsung 7 kg Fully-Automatic Top Loading Washing Machine (WA70A4002GS/TL, Imperial Silver)',
+                price: 36990,
+                imgSrc: 'https://m.media-amazon.com/images/I/71tXNy7SVZL._AC_UY218_.jpg',
+                ratingCount: 110,
+                averageRating: 3.8,
+                discount: 43
+            }
+        ];
+
+        var index = 0;
+
+        console.log(products[index]);
+
+        index++;
+
+        console.log(products[index]);
+
+        index++;
+
+        console.log(products[index]);
+
+        var index = products.length - 1;
+
+        console.log(products[index]);
+
+        index--;
+
+        console.log(products[index]);
+
+        index--;
+
+        console.log(products[index]);
+
+        var sum = 0;
+
+        sum = sum + products[0].price;
+
+        sum += products[1].price //sum = sum + products[1].price;
+
+
+        var users = [
+            {
+                email: 'karthik.dl@gmail.com',
+                password: 'karthik123',
+                name: 'Karthik',
+                mobile: 9032456234
+            }
+        ];
+
+
+        // function validateEmail() {
+        //     var enteredEmail = document.getElementById('email').value;
+
+        //     var isBothAreMatching = (enteredEmail == users[0].email) ? 'Registered Email': 'Unregistered email';            
+        //     console.log(isBothAreMatching);
+        // }
+
+        // var mobileNo = '9032456234';
+
+        // console.log(mobileNo === users[0].mobile);
+
+        
+
+        function validateCredentials() {
+            var emailOrMobile = document.getElementById('emailOrMobile').value;
+            var password = document.getElementById('password').value;
+
+            var isValid = ((emailOrMobile === users[0].email) || (emailOrMobile === users[0].mobile)) && (password === users[0].password) ? navigateToHomePage() : false;
+
+
+            document.getElementById('message').innerHTML = isValid === false ? 'Incorrect email/mobile/password' : '';
+        }
+
+        function navigateToHomePage() {
+            window.location.href = './home.html';
+        }
+
+
+    </script>
+</body>
+</html>

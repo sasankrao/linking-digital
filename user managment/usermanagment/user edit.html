@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    background: linear-gradient(to right, rgb(242, 112, 156), rgb(255, 148, 114));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 20px 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 400px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+    </style>
+    <title>Edit User Details</title>
+   
+</head>
+<body>
+    <div class="container">
+        <h2>Edit User Details</h2>
+        <form>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" value="saisasank">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" value="saisasank@mail.com">
+
+            <label for="role">Role</label>
+            <select id="role" name="role">
+                <option value="admin" selected>Admin</option>
+                <option value="user">User</option>
+            </select>
+
+            <label for="status">Status</label>
+            <select id="status" name="status">
+                <option value="active" selected>Active</option>
+                <option value="inactive">Inactive</option>
+            </select>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" value="7901005698">
+
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" value="rajahmundry">
+
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+</body>
+</html>

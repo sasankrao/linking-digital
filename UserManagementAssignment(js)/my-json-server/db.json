@@ -1,0 +1,51 @@
+{
+  "user": [
+    {
+      "id": "429",
+      "uName": "Tanu123",
+      "uEmail": "tanu8484@gmail.com",
+      "uPassword": "Tanu567@",
+      "confirmPassword": "Tanu567@",
+      "uRole": "user",
+      "uStatus": "Inactive"
+    },
+    {
+      "id": "101",
+      "uName": "Nidhi123",
+      "uEmail": "nidhi123@gmail.com",
+      "uPassword": "Navin@345",
+      "confirmPassword": "Navin@345",
+      "uRole": "admin",
+      "uStatus": "active"
+    },
+    {
+      "id": "102",
+      "uName": "Neha123",
+      "uEmail": "neha123@gmail.com",
+      "uPassword": "Ankit678@",
+      "confirmPassword": "Ankit678@",
+      "uRole": "user",
+      "uStatus": "Inactive"
+    },
+    {
+      "id": "103",
+      "uName": "Kshitij00",
+      "uEmail": "kshitij000@gmail.com",
+      "uPassword": "Kshitij@345",
+      "confirmPassword": "Kshitij@345",
+      "uRole": "admin",
+      "uStatus": "active"
+    }
+  ],
+  "test": [
+    {
+      "id": "103",
+      "uName": "Kshitij",
+      "uEmail": "tanu00@gmail.com",
+      "uPassword": "kshitij@23",
+      "confirmPassword": "Kshitij@23",
+      "uRole": "admin",
+      "uStatus": "active"
+    }
+  ]
+}

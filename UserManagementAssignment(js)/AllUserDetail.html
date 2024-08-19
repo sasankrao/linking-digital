@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin User Management</title>
+    <link rel="stylesheet" href="AllUser.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Admin User Management</h2>
+
+      <div class="search-filter">
+        <input type="text" id="search" placeholder="Search users..." />
+        <select id="role" name="role" onchange="filterUsers1()">
+          <option value="0">select..</option>
+          <option value="admin">Admin</option>
+          <option value="user">User</option>
+        </select>
+        <select id="status" name="status" onchange="filterUsers()">
+          <option value="0">select..</option>
+          <option value="active">Active</option>
+          <option value="Inactive">Inactive</option>
+        </select>
+      </div>
+
+      <table id="userTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="userTableBody">
+          <!-- User rows will be dynamically added here -->
+        </tbody>
+      </table>
+    </div>
+
+    <script src="script2.js"></script>
+  </body>
+</html>

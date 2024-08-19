@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container2" id="maincontainer">
+      <div class="profile-info">
+        <h3 id="username">John Doe</h3>
+        <p id="Email">Email: john.doe@example.com</p>
+      </div>
+    </div>
+    <script>
+      var UserDetails = [];
+
+      var http = new XMLHttpRequest();
+
+      http.onreadystatechange = function () {
+        if (http.readyState === 4) {
+          var response = JSON.parse(http.responseText);
+          UserDetails = response;
+          console.log(UserDetails);
+          displayProducts(UserDetails);
+        }
+      };
+
+      http.open("GET", "http://localhost:3000/user");
+
+      http.send();
+
+      function displayProducts(UserDetails) {
+        var maincontainer = document.getElementById("maincontainer");
+        maincontainer.innerHTML = "";
+        for (i = 0; i < UserDetails.length; i++) {
+          console.log(UserDetails[i].uName);
+          var divProfile = document.createElement("div");
+          divProfile.classList.add("profile");
+          var h3 = document.createElement("h3");
+          h3.innerHTML = UserDetails[i].uName;
+          var p = document.createElement("p");
+          p.innerHTML = UserDetails[i].uEmail;
+          divProfile.appendChild(h3);
+          divProfile.appendChild(p);
+          maincontainer.appendChild(divProfile);
+        }
+      }
+    </script>
+  </body>
+</html>
+
+<td class="actions">
+  <button onclick="editUser('${user.email}')">Edit</button>
+  <button onclick="viewUser('${user.email}')">View</button>
+  <button onclick="deleteUser('${user.email}')">Delete</button>
+</td>
+
+actionsCell.innerHTML = `
+<button onclick="editUser('jane.doe@example.com')">Edit</button>
+<button onclick="viewUser('jane.doe@example.com')">View</button>
+<button onclick="deleteUser('jane.doe@example.com')">Delete</button>
+`;
